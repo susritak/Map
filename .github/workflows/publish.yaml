@@ -35,4 +35,6 @@ jobs:
           path: ./dist
 
       - uses: actions/deploy-pages@v4
+      with:
+       artifact: dist
        
