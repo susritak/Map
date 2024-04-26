@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { Map, View } from "ol"; // Import Map and View from OpenLayers
+import "./application.css"
 
 import "ol/ol.css"; // Import OpenLayers CSS (adjust path as needed)
 
@@ -30,7 +31,6 @@ export function MapApplication() {
       </header>
       <nav>Actions</nav>
       <main ref={mapRef} className="map-container">
-        {/* No need for static content inside map container */}
       </main>
     </div>
   );
