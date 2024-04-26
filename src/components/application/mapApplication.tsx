@@ -1,28 +1,35 @@
 import React, { useRef, useEffect } from "react";
-import { Map, View } from "ol"; // Import Map and View from OpenLayers
-import "./application.css"
-
+import { Map, View } from "ol";
+import TileLayer from "ol/layer/Tile";
+import OSM from "ol/source/OSM";
 import "ol/ol.css"; // Import OpenLayers CSS (adjust path as needed)
+import { useGeographic } from "ol/proj";
+
+useGeographic();
 
 export function MapApplication() {
-  const mapRef = useRef<HTMLDivElement>(null); // Ref to hold the map container
+  const mapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!mapRef.current) return; // Exit if mapRef is not yet available
+    if (!mapRef.current) return;
 
     const map = new Map({
       target: mapRef.current,
-      layers: [], // Add layers as needed
+      layers: [
+        new TileLayer({
+          source: new OSM(),
+        }),
+      ],
       view: new View({
-        center: [0, 0], // Initial center coordinates
-        zoom: 2, // Initial zoom level
+        center: [10.7522, 59.9139],
+        zoom: 12,
       }),
     });
 
     return () => {
-      map.setTarget(); // Clean up: remove map from target on unmount
+      map.setTarget();
     };
-  }, []); // Run effect only once on component mount
+  }, []);
 
   return (
     <div>
@@ -30,10 +37,7 @@ export function MapApplication() {
         <h1>Map Application</h1>
       </header>
       <nav>Actions</nav>
-      <main ref={mapRef} className="map-container">
-      </main>
+      <main ref={mapRef} className="map-container"></main>
     </div>
   );
 }
-
-
