@@ -1,19 +1,19 @@
 * {
-    margin: unset;
-  }
-  
-  #root {
-    display: grid;
-    grid-template-rows: auto auto 1fr;
-    border: 1px solid black;
-    height: 100dvh;
-  }
-  
-  main {
-    background-color: lightblue;
-  }
-  
-  nav,
-  header {
-    padding: 0.25em;
-  }
+  margin: unset;
+}
+
+#root {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  border: 1px solid black;
+  height: 100dvh;
+}
+
+main {
+  background-color: lightblue;
+}
+
+nav,
+header {
+  padding: 0.25em;
+}

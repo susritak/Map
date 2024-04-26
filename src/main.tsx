@@ -9,4 +9,3 @@ root.render(<h1>Mapping Application</h1>);
 
 // Now render the MapApplication component using root.render
 root.render(<MapApplication />);
-
