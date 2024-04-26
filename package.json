@@ -2,13 +2,14 @@
   "devDependencies": {
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
+    "prettier": "^3.2.5",
     "typescript": "^5.4.5",
     "vite": "^5.2.10"
   },
   "scripts": {
     "dev": "vite",
     "build": "npm run check && vite build",
-    "check": "prettier --check . && tsc --"
+    "check": "npx prettier --check . && tsc --"
   },
   "dependencies": {
     "ol": "^9.1.0",
